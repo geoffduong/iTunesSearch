@@ -90,3 +90,6 @@ ENV/
 
 # Text files
 *.txt
+
+# JSON files
+*.json

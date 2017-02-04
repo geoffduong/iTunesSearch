@@ -15,7 +15,7 @@ print 'Artist name entered: ' + artistName
 print 'Searching...'
 urlpath = urlopen('https://itunes.apple.com/search?term=' + artistName + '&entity=album&limit=5&sort=recent')
 
-target = open('artistJSON.txt', 'w')
+target = open('artistJSON.json', 'w')
 target.truncate()
 print 'Writing JSON to text file...'
 target.write(urlpath.read())

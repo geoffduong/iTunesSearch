@@ -10,12 +10,14 @@ for i in range(2, len(argv)):
     artistName = artistName + ' ' + argv[i]
 
 artistName = '+'.join(artistName.split(' '))
-print artistName
+print 'Artist name entered: ' + artistName
 
+print 'Searching...'
 urlpath = urlopen('https://itunes.apple.com/search?term=' + artistName + '&entity=album&limit=5&sort=recent')
-html = urlpath.read()
 
 target = open('artistJSON.txt', 'w')
 target.truncate()
-target.write(html)
+print 'Writing JSON to text file...'
+target.write(urlpath.read())
 target.close()
+print 'Done!'

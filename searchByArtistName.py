@@ -1,6 +1,7 @@
 import json
 from urllib2 import urlopen
 from sys import argv
+from pprint import pprint
 
 if len(argv) == 1:
     sys.exit("Please enter artist name as arg")
@@ -15,9 +16,9 @@ print 'Artist name entered: ' + artistName
 print 'Searching...'
 urlpath = urlopen('https://itunes.apple.com/search?term=' + artistName + '&entity=album&limit=5&sort=recent')
 
-target = open('artistJSON.json', 'w')
+target = open(artistName + '.json', 'w')
 target.truncate()
-print 'Writing JSON to text file...'
+print 'Writing to JSON file'
 target.write(urlpath.read())
 target.close()
 print 'Done!'

@@ -1,7 +1,6 @@
 import json
 from urllib2 import urlopen
 from sys import argv
-from pprint import pprint
 
 if len(argv) == 1:
     sys.exit("Please enter artist name as arg")

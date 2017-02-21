@@ -9,6 +9,7 @@ with open(jsonFile) as data_file:
 
 for i in range(0, data['resultCount']):
     if data['results'][i]['trackCount'] != 1:
-        pprint(data['results'][i]['collectionName'])
+        print(data['results'][i]['collectionName']), data['results'][i]['releaseDate']
 
-
+# sort by release date
+pprint(data)

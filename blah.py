@@ -5,7 +5,7 @@ from sys import argv
 
 albumID = argv[1]
 
-urlpath = urlopen('https://itunes.apple.com/search?id=' + albumID)
+urlpath = urlopen('https://itunes.apple.com/lookup?id=' + albumID)
 
 target = open('blah.json', 'w')
 target.truncate()
@@ -20,7 +20,7 @@ print (data['resultCount'])
 count = 0
 
 while data['resultCount'] == 0:
-    urlpath = urlopen('https://itunes.apple.com/search?id=' + albumID)
+    urlpath = urlopen('https://itunes.apple.com/lookup?id=' + albumID)
 
     target = open('blah.json', 'w')
     target.truncate()
